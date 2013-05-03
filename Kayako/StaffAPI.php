@@ -2,7 +2,7 @@
 
 namespace Kayako;
 
-class Staff_API {
+class StaffAPI {
 
 	/**
 	 * The Kayako Staff API End Point e.g http://support.mycompany.com/staffapi/index.php
