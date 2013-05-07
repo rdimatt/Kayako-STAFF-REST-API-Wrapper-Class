@@ -19,7 +19,7 @@ Documentation can be found for the Kayako Staff API at http://wiki.kayako.com/di
 
 ### If you are using Composer
 
-In your composer file, defined a repositories block containing the following
+In your composer file, define a repositories block containing the following:
 
 ```json
 "repositories": [
@@ -43,7 +43,7 @@ In your composer file, defined a repositories block containing the following
 ],
 ```
 
-** To Do: add to packagist **
+**To Do: add to packagist**
 
 ## Usage Example
 
