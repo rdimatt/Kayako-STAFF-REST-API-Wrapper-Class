@@ -19,7 +19,31 @@ Documentation can be found for the Kayako Staff API at http://wiki.kayako.com/di
 
 ### If you are using Composer
 
-` // coming soon `
+In your composer file, defined a repositories block containing the following
+
+```json
+"repositories": [
+    {
+        "type": "package",
+        "package": {
+            "name": "rdimatt/kayako-staff-rest",
+            "version": "dev-master",
+            "autoload": {
+                "psr-0": { 
+                    "Kayako": ""
+                 }
+            },
+            "source": {
+                "url": "git@github.com:rdimatt/Kayako-STAFF-REST-API-Wrapper-Class.git",
+                "type": "git",
+                "reference": "master"
+            }
+        }
+    }
+],
+```
+
+** To Do: add to packagist **
 
 ## Usage Example
 
