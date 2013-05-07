@@ -117,17 +117,19 @@ class StaffAPI {
 	}
 	
 	/**
-	 * Logout of Kayako and delete the session
+	 * Find an attachment by its ID
 	 *
-	 * @return void
+	 * @param integer $ticketID The ID of the ticket
+	 * @param integer $attachmentID The ID of the attachment
+	 * @return SimpleXMLElement
 	 */
-	public function __destruct()
+	public function findAttachment($ticketID, $attachmentID)
 	{
-		$params = array('sessionid' => $this->session_id);
+		$params = array('sessionid' => $this->session_id, 'ticketid' => $ticketID, 'attachmentid' => $attachmentID);
 		
-		$this->doRequest('/Core/Default/Logout', $params);
+		$response = $this->doRequest('/Tickets/Retrieve/Attachment', $params);
 		
-		$this->session_id = null;
+		return $response->attachment;
 	}
 	
 	/**
@@ -165,5 +167,19 @@ class StaffAPI {
 		curl_close ($ch);
 		
 		return $xml;
+	}
+	
+	/**
+	 * Logout of Kayako and delete the session
+	 *
+	 * @return void
+	 */
+	public function __destruct()
+	{
+		$params = array('sessionid' => $this->session_id);
+		
+		$this->doRequest('/Core/Default/Logout', $params);
+		
+		$this->session_id = null;
 	}
 }
